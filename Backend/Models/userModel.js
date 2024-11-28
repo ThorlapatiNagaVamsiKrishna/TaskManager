@@ -1,4 +1,26 @@
 const mongoose = require('mongoose')
+const taskSchema = new mongoose.Schema({
+    task_title: {
+        type: String, 
+        required: [true, 'Task_title is required']
+    }, 
+    task_description: {
+        type: String,
+    }, 
+    status: {
+        type: String,
+        required: true
+    },
+    category: {
+        type: String,
+        required: true
+    },
+    createdAt: {
+        type: Date, 
+        default: Date.now 
+    },
+
+})
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -7,7 +29,7 @@ const userSchema = new mongoose.Schema({
     },
     email: {
         type: String,
-        required: true,
+        required: [true, 'Email is required'],
         unique: true
     },
     password: {
@@ -19,6 +41,7 @@ const userSchema = new mongoose.Schema({
         type: Date, 
         default: Date.now 
     },
+    taskList: [taskSchema]
 })
 
 const User = mongoose.model('User', userSchema)

@@ -1,0 +1,58 @@
+GET http://localhost:3000/user/all
+
+
+####
+POST http://localhost:3000/user/signup
+Content-Type: application/json 
+
+{
+    "name": "Vamsikrishna",
+    "email": "vamsi@gmail.com",
+    "password": "vamsi@1234"
+}
+
+####
+
+POST http://localhost:3000/user/login
+Content-Type: application/json 
+
+{
+    "email": "vamsi@gmail.com",
+    "password": "vamsi@1234"
+}
+
+####
+POST http://localhost:3000/tasks
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzJhZjkxMmM3NmQ0ZjE3ZmU0N2MwMDEiLCJpYXQiOjE3MzEzMzIxNDV9.q0YQKDeB9mO9RHmi_SEKs0jBsr6ZnWmk2QqAYLg5V54
+
+{   
+    "task_title": "python",
+    "task_description": "Learn python",
+    "status": "active",
+    "category":"EDU"
+}
+
+####
+GET http://localhost:3000/userTasks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzJhZjkxMmM3NmQ0ZjE3ZmU0N2MwMDEiLCJpYXQiOjE3MzEzMzIxNDV9.q0YQKDeB9mO9RHmi_SEKs0jBsr6ZnWmk2QqAYLg5V54
+
+###
+GET http://localhost:3000/getSingleTask/672af924c76d4f17fe47c005
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzJhZjkxMmM3NmQ0ZjE3ZmU0N2MwMDEiLCJpYXQiOjE3MzEzMzIxNDV9.q0YQKDeB9mO9RHmi_SEKs0jBsr6ZnWmk2QqAYLg5V54
+
+
+###
+DELETE  http://localhost:3000/getSingleTask/6731819155b9c5abd7a3ba93
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzJhZjkxMmM3NmQ0ZjE3ZmU0N2MwMDEiLCJpYXQiOjE3MzEzMzIxNDV9.q0YQKDeB9mO9RHmi_SEKs0jBsr6ZnWmk2QqAYLg5V54
+
+###
+PATCH  http://localhost:3000/getSingleTask/673182076b7abd5d8fb0f076
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzJhZjkxMmM3NmQ0ZjE3ZmU0N2MwMDEiLCJpYXQiOjE3MzEzMzIxNDV9.q0YQKDeB9mO9RHmi_SEKs0jBsr6ZnWmk2QqAYLg5V54
+
+{   
+    "task_title": "C++",
+    "task_description": "Learn C++"
+}
+
